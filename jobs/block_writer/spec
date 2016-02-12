@@ -1,0 +1,8 @@
+---
+name: block_writer
+templates:
+  run.erb: bin/run
+packages:
+- block_writer
+requires:
+- db

@@ -1,0 +1,63 @@
+director_uuid: e3ba682c-7f23-4c98-a7c3-c2efe9ba6bb5
+name: cockroachdb
+releases:
+- name: cockroachdb
+  version: latest
+compilation:
+  cloud_properties:
+    instance_type: m3.medium
+    availability_zone: 'us-east-1a'
+  network: private
+  reuse_compilation_vms: true
+  workers: 4
+jobs:
+- name: db
+  instances: 3
+  networks:
+  - name: private
+    default: [dns, gateway]
+  persistent_disk: 1024
+  resource_pool: default
+  templates:
+  - name: cockroachdb
+    links:
+      db: db.cockroachdb.db
+- name: block_writer
+  lifecycle: errand
+  instances: 1
+  networks:
+  - name: private
+    default: [dns, gateway]
+  resource_pool: default
+  templates:
+  - name: block_writer
+    links:
+      db: db.cockroachdb.db
+
+resource_pools:
+- name: default
+  network: private
+  stemcell:
+    name: bosh-aws-xen-ubuntu-trusty-go_agent
+    version: latest
+  cloud_properties:
+    instance_type: m3.medium
+    availability_zone: 'us-east-1a'
+networks:
+- name: private
+  type: manual
+  subnets:
+  - range: 10.0.1.0/24
+    gateway: 10.0.1.1
+    reserved: 10.0.1.1 - 10.0.1.3
+    dns: [10.0.0.2]
+    security_groups:
+    - default
+    cloud_properties:
+      subnet: subnet-a10bb3d7
+update:
+  canaries: 0
+  canary_watch_time: 30000-240000
+  max_in_flight: 1
+  serial: false
+  update_watch_time: 30000-240000

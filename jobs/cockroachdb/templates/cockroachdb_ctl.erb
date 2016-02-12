@@ -1,0 +1,51 @@
+#!/bin/bash
+set -e
+
+<%
+def join_flag
+  if index == 0
+    ""
+  else
+    "--join #{others(db_node_ips).join(',')}"
+  end
+end
+
+def my_ip
+  spec.networks['private']['ip']
+end
+
+def others(nodes)
+  nodes - [  my_ip ]
+end
+
+def db_node_ips
+  link('db')['nodes'].map{ |n| n['networks']['private']['address'] }
+end
+%>
+
+RUN_DIR=/var/vcap/sys/run/cockroachdb
+PIDFILE=${RUN_DIR}/cockroachdb.pid
+JOB_DIR=/var/vcap/jobs/cockroachdb
+STORE_DIR=/var/vcap/store/db
+
+mkdir -p $RUN_DIR $STORE_DIR
+source /var/vcap/packages/common/utils.sh
+
+case $1 in
+
+  start)
+    pid_guard $PIDFILE "cockroachdb"
+    chown -R vcap:vcap $RUN_DIR $STORE_DIR
+    echo $$ > $PIDFILE
+    exec chpst -u vcap:vcap /var/vcap/packages/cockroach/cockroach start --insecure --host <%= my_ip %> <%= join_flag %> --stores=hdd:7200rpm=/var/vcap/store/db
+    ;;
+
+  stop)
+    kill_and_wait $PIDFILE
+    ;;
+
+  *)
+    echo "Usage: cockroachdb_ctl {start|stop}"
+    ;;
+
+esac

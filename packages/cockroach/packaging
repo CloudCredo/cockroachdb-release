@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e -x
+export GOROOT=/var/vcap/packages/golang1.5
+export GOPATH=/var/vcap/data/tmp/cockroach
+mkdir -p $GOPATH
+export PATH=/var/vcap/packages/git/bin/:$GOROOT/bin:$GOPATH/bin:$PATH
+go get golang.org/x/tools/cmd/...
+go get -d github.com/cockroachdb/cockroach
+cd $GOPATH/src/github.com/cockroachdb/cockroach
+make build
+cp cockroach $BOSH_INSTALL_TARGET

@@ -1,0 +1,13 @@
+---
+name: cockroachdb
+
+packages:
+- cockroach
+- common
+requires:
+- db
+provides:
+- db
+templates:
+  cockroachdb_ctl.erb: bin/cockroachdb_ctl
+properties: {}

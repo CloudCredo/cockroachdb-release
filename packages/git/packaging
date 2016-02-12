@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e -x
+tar xzf git/git-2.7.1.tar.gz
+cd git-2.7.1
+./configure --prefix=${BOSH_INSTALL_TARGET}
+make NO_TCLTK=Yes NO_PYTHON=Yes
+make NO_TCLTK=Yes NO_PYTHON=Yes install

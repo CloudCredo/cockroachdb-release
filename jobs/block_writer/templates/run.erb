@@ -1,0 +1,4 @@
+#!/bin/bash
+node_ip=<%= link('db')['nodes'].map{ |n| n['networks']['private']['address'] }.sample %>
+timeout 5m /var/vcap/packages/block_writer/block_writer http://${node_ip}:26257
+exit 0

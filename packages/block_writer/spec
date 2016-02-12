@@ -1,0 +1,7 @@
+---
+name: block_writer
+files:
+- block_writer/**/*
+dependencies:
+- git
+- golang1.5
