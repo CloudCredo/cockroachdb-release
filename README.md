@@ -4,7 +4,6 @@ Deploy [CockroachDB](https://github.com/cockroachdb/cockroach) easily with this 
 
 ## Limitations
 
-* The deployments are non-reproducible as our packaging runs `go get` to pull in today's exciting new code
 * Cockroach is run with `--insecure`
 * The gossiping is broken on bosh-lite, probably related to [https://github.com/cloudfoundry/bosh-lite/issues/193](https://github.com/cloudfoundry/bosh-lite/issues/193)
 

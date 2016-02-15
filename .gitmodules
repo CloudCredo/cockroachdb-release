@@ -1,0 +1,231 @@
+[submodule "src/cockroach/github.com/agtorre/gocolorize"]
+	path = src/cockroach/github.com/agtorre/gocolorize
+	url = https://github.com/agtorre/gocolorize
+[submodule "src/cockroach/github.com/biogo/store"]
+	path = src/cockroach/github.com/biogo/store
+	url = https://github.com/biogo/store
+[submodule "src/cockroach/github.com/client9/misspell"]
+	path = src/cockroach/github.com/client9/misspell
+	url = https://github.com/client9/misspell
+[submodule "src/cockroach/github.com/cloudfoundry/gosigar"]
+	path = src/cockroach/github.com/cloudfoundry/gosigar
+	url = https://github.com/cloudfoundry/gosigar
+[submodule "src/cockroach/github.com/cockroachdb/c-lz4"]
+	path = src/cockroach/github.com/cockroachdb/c-lz4
+	url = https://github.com/cockroachdb/c-lz4
+[submodule "src/cockroach/github.com/cockroachdb/c-protobuf"]
+	path = src/cockroach/github.com/cockroachdb/c-protobuf
+	url = https://github.com/cockroachdb/c-protobuf
+[submodule "src/cockroach/github.com/cockroachdb/c-rocksdb"]
+	path = src/cockroach/github.com/cockroachdb/c-rocksdb
+	url = https://github.com/cockroachdb/c-rocksdb
+[submodule "src/cockroach/github.com/cockroachdb/c-snappy"]
+	path = src/cockroach/github.com/cockroachdb/c-snappy
+	url = https://github.com/cockroachdb/c-snappy
+[submodule "src/cockroach/github.com/cockroachdb/cockroach"]
+	path = src/cockroach/github.com/cockroachdb/cockroach
+	url = https://github.com/cockroachdb/cockroach
+[submodule "src/cockroach/github.com/cockroachdb/stress"]
+	path = src/cockroach/github.com/cockroachdb/stress
+	url = https://github.com/cockroachdb/stress
+[submodule "src/cockroach/github.com/cockroachdb/yacc"]
+	path = src/cockroach/github.com/cockroachdb/yacc
+	url = https://github.com/cockroachdb/yacc
+[submodule "src/cockroach/github.com/codahale/hdrhistogram"]
+	path = src/cockroach/github.com/codahale/hdrhistogram
+	url = https://github.com/codahale/hdrhistogram
+[submodule "src/cockroach/github.com/codegangsta/cli"]
+	path = src/cockroach/github.com/codegangsta/cli
+	url = https://github.com/codegangsta/cli
+[submodule "src/cockroach/github.com/coreos/etcd"]
+	path = src/cockroach/github.com/coreos/etcd
+	url = https://github.com/coreos/etcd
+[submodule "src/cockroach/github.com/coreos/go-systemd"]
+	path = src/cockroach/github.com/coreos/go-systemd
+	url = https://github.com/coreos/go-systemd
+[submodule "src/cockroach/github.com/cpuguy83/go-md2man"]
+	path = src/cockroach/github.com/cpuguy83/go-md2man
+	url = https://github.com/cpuguy83/go-md2man
+[submodule "src/cockroach/github.com/docker/docker"]
+	path = src/cockroach/github.com/docker/docker
+	url = https://github.com/docker/docker
+[submodule "src/cockroach/github.com/docker/engine-api"]
+	path = src/cockroach/github.com/docker/engine-api
+	url = https://github.com/docker/engine-api
+[submodule "src/cockroach/github.com/docker/go-connections"]
+	path = src/cockroach/github.com/docker/go-connections
+	url = https://github.com/docker/go-connections
+[submodule "src/cockroach/github.com/docker/go-units"]
+	path = src/cockroach/github.com/docker/go-units
+	url = https://github.com/docker/go-units
+[submodule "src/cockroach/github.com/elazarl/go-bindata-assetfs"]
+	path = src/cockroach/github.com/elazarl/go-bindata-assetfs
+	url = https://github.com/elazarl/go-bindata-assetfs
+[submodule "src/cockroach/github.com/GeertJohan/go.linenoise"]
+	path = src/cockroach/github.com/GeertJohan/go.linenoise
+	url = https://github.com/GeertJohan/go.linenoise
+[submodule "src/cockroach/github.com/go-sql-driver/mysql"]
+	path = src/cockroach/github.com/go-sql-driver/mysql
+	url = https://github.com/go-sql-driver/mysql
+[submodule "src/cockroach/github.com/godbus/dbus"]
+	path = src/cockroach/github.com/godbus/dbus
+	url = https://github.com/godbus/dbus
+[submodule "src/cockroach/github.com/gogo/protobuf"]
+	path = src/cockroach/github.com/gogo/protobuf
+	url = https://github.com/gogo/protobuf
+[submodule "src/cockroach/github.com/golang/lint"]
+	path = src/cockroach/github.com/golang/lint
+	url = https://github.com/golang/lint
+[submodule "src/cockroach/github.com/golang/protobuf"]
+	path = src/cockroach/github.com/golang/protobuf
+	url = https://github.com/golang/protobuf
+[submodule "src/cockroach/github.com/google/btree"]
+	path = src/cockroach/github.com/google/btree
+	url = https://github.com/google/btree
+[submodule "src/cockroach/github.com/gordonklaus/ineffassign"]
+	path = src/cockroach/github.com/gordonklaus/ineffassign
+	url = https://github.com/gordonklaus/ineffassign
+[submodule "src/cockroach/github.com/jteeuwen/go-bindata"]
+	path = src/cockroach/github.com/jteeuwen/go-bindata
+	url = https://github.com/jteeuwen/go-bindata
+[submodule "src/cockroach/github.com/julienschmidt/httprouter"]
+	path = src/cockroach/github.com/julienschmidt/httprouter
+	url = https://github.com/julienschmidt/httprouter
+[submodule "src/cockroach/github.com/kisielk/errcheck"]
+	path = src/cockroach/github.com/kisielk/errcheck
+	url = https://github.com/kisielk/errcheck
+[submodule "src/cockroach/github.com/kisielk/gotool"]
+	path = src/cockroach/github.com/kisielk/gotool
+	url = https://github.com/kisielk/gotool
+[submodule "src/cockroach/github.com/kkaneda/returncheck"]
+	path = src/cockroach/github.com/kkaneda/returncheck
+	url = https://github.com/kkaneda/returncheck
+[submodule "src/cockroach/github.com/kr/pretty"]
+	path = src/cockroach/github.com/kr/pretty
+	url = https://github.com/kr/pretty
+[submodule "src/cockroach/github.com/kr/text"]
+	path = src/cockroach/github.com/kr/text
+	url = https://github.com/kr/text
+[submodule "src/cockroach/github.com/lib/pq"]
+	path = src/cockroach/github.com/lib/pq
+	url = https://github.com/lib/pq
+[submodule "src/cockroach/github.com/mattn/go-isatty"]
+	path = src/cockroach/github.com/mattn/go-isatty
+	url = https://github.com/mattn/go-isatty
+[submodule "src/cockroach/github.com/mattn/go-runewidth"]
+	path = src/cockroach/github.com/mattn/go-runewidth
+	url = https://github.com/mattn/go-runewidth
+[submodule "src/cockroach/github.com/mibk/dupl"]
+	path = src/cockroach/github.com/mibk/dupl
+	url = https://github.com/mibk/dupl
+[submodule "src/cockroach/github.com/montanaflynn/stats"]
+	path = src/cockroach/github.com/montanaflynn/stats
+	url = https://github.com/montanaflynn/stats
+[submodule "src/cockroach/github.com/olekukonko/tablewriter"]
+	path = src/cockroach/github.com/olekukonko/tablewriter
+	url = https://github.com/olekukonko/tablewriter
+[submodule "src/cockroach/github.com/opencontainers/runc"]
+	path = src/cockroach/github.com/opencontainers/runc
+	url = https://github.com/opencontainers/runc
+[submodule "src/cockroach/github.com/opencontainers/specs"]
+	path = src/cockroach/github.com/opencontainers/specs
+	url = https://github.com/opencontainers/specs
+[submodule "src/cockroach/github.com/opennota/check"]
+	path = src/cockroach/github.com/opennota/check
+	url = https://github.com/opennota/check
+[submodule "src/cockroach/github.com/opentracing/opentracing-go"]
+	path = src/cockroach/github.com/opentracing/opentracing-go
+	url = https://github.com/opentracing/opentracing-go
+[submodule "src/cockroach/github.com/rcrowley/go-metrics"]
+	path = src/cockroach/github.com/rcrowley/go-metrics
+	url = https://github.com/rcrowley/go-metrics
+[submodule "src/cockroach/github.com/robfig/glock"]
+	path = src/cockroach/github.com/robfig/glock
+	url = https://github.com/robfig/glock
+[submodule "src/cockroach/github.com/russross/blackfriday"]
+	path = src/cockroach/github.com/russross/blackfriday
+	url = https://github.com/russross/blackfriday
+[submodule "src/cockroach/github.com/satori/go.uuid"]
+	path = src/cockroach/github.com/satori/go.uuid
+	url = https://github.com/satori/go.uuid
+[submodule "src/cockroach/github.com/shurcooL/sanitized_anchor_name"]
+	path = src/cockroach/github.com/shurcooL/sanitized_anchor_name
+	url = https://github.com/shurcooL/sanitized_anchor_name
+[submodule "src/cockroach/github.com/Sirupsen/logrus"]
+	path = src/cockroach/github.com/Sirupsen/logrus
+	url = https://github.com/Sirupsen/logrus
+[submodule "src/cockroach/github.com/spf13/cobra"]
+	path = src/cockroach/github.com/spf13/cobra
+	url = https://github.com/spf13/cobra
+[submodule "src/cockroach/github.com/spf13/pflag"]
+	path = src/cockroach/github.com/spf13/pflag
+	url = https://github.com/spf13/pflag
+[submodule "src/cockroach/github.com/syndtr/gocapability"]
+	path = src/cockroach/github.com/syndtr/gocapability
+	url = https://github.com/syndtr/gocapability
+[submodule "src/cockroach/github.com/tebeka/go2xunit"]
+	path = src/cockroach/github.com/tebeka/go2xunit
+	url = https://github.com/tebeka/go2xunit
+[submodule "src/cockroach/github.com/termie/go-shutil"]
+	path = src/cockroach/github.com/termie/go-shutil
+	url = https://github.com/termie/go-shutil
+[submodule "src/cockroach/github.com/vishvananda/netlink"]
+	path = src/cockroach/github.com/vishvananda/netlink
+	url = https://github.com/vishvananda/netlink
+[submodule "src/cockroach/github.com/VividCortex/ewma"]
+	path = src/cockroach/github.com/VividCortex/ewma
+	url = https://github.com/VividCortex/ewma
+[submodule "src/cockroach/gopkg.in/inf.v0"]
+	path = src/cockroach/gopkg.in/inf.v0
+	url = https://gopkg.in/inf.v0
+[submodule "src/cockroach/gopkg.in/yaml.v1"]
+	path = src/cockroach/gopkg.in/yaml.v1
+	url = https://gopkg.in/yaml.v1
+[submodule "src/cockroach/golang.org/x/crypto"]
+	path = src/cockroach/golang.org/x/crypto
+	url = https://github.com/golang/crypto.git
+[submodule "src/cockroach/golang.org/x/net"]
+	path = src/cockroach/golang.org/x/net
+	url = https://github.com/golang/net.git
+[submodule "src/cockroach/golang.org/x/text"]
+	path = src/cockroach/golang.org/x/text
+	url = https://github.com/golang/text.git
+[submodule "src/cockroach/golang.org/x/tools"]
+	path = src/cockroach/golang.org/x/tools
+	url = https://github.com/golang/tools.git
+[submodule "src/cockroach/google.golang.org/grpc"]
+	path = src/cockroach/google.golang.org/grpc
+	url = https://github.com/grpc/grpc-go.git
+[submodule "src/github.com/cockroachdb/examples-go"]
+	path = src/github.com/cockroachdb/examples-go
+	url = https://github.com/cockroachdb/examples-go.git
+[submodule "src/block_writer/cockroachdb/cockroach"]
+	path = src/block_writer/cockroachdb/cockroach
+	url = https://github.com/cockroachdb/cockroach.git
+[submodule "src/block_writer/cockroachdb/examples-go"]
+	path = src/block_writer/cockroachdb/examples-go
+	url = https://github.com/cockroachdb/examples-go.git
+[submodule "src/block_writer/github.com/cockroachdb/examples-go"]
+	path = src/block_writer/github.com/cockroachdb/examples-go
+	url = https://github.com/cockroachdb/examples-go.git
+[submodule "src/block_writer/github.com/cockroachdb/cockroach"]
+	path = src/block_writer/github.com/cockroachdb/cockroach
+	url = https://github.com/cockroachdb/cockroach.git
+[submodule "src/block_writer/cockroachdb/c-lz4"]
+	path = src/block_writer/cockroachdb/c-lz4
+	url = https://github.com/cockroachdb/c-lz4.git
+[submodule "src/block_writer/github.com/cockroachdb/c-lz4"]
+	path = src/block_writer/github.com/cockroachdb/c-lz4
+	url = https://github.com/cockroachdb/c-lz4.git
+[submodule "src/block_writer/github.com/cockroachdb/c-snappy"]
+	path = src/block_writer/github.com/cockroachdb/c-snappy
+	url = https://github.com/cockroachdb/c-snappy.git
+[submodule "src/block_writer/github.com/gogo/protobuf"]
+	path = src/block_writer/github.com/gogo/protobuf
+	url = https://github.com/gogo/protobuf.git
+[submodule "src/block_writer/golang.org/x/crypto"]
+	path = src/block_writer/golang.org/x/crypto
+	url = https://github.com/golang/crypto.git
+[submodule "src/block_writer/gopkg.in/yaml.v1"]
+	path = src/block_writer/gopkg.in/yaml.v1
+	url = https://gopkg.in/yaml.v1.git

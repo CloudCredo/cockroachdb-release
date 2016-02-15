@@ -1,14 +1,9 @@
 #!/bin/bash
 set -e -x
+mv ${BOSH_COMPILE_TARGET}/block_writer ${BOSH_COMPILE_TARGET}/src
 export GOROOT=/var/vcap/packages/golang1.5
-export GOPATH=/var/vcap/data/tmp/block_writer
-mkdir -p $GOPATH
-export PATH=/var/vcap/packages/git/bin/:$GOROOT/bin:$GOPATH/bin:$PATH
-
-# UUID interface has changed
-go get -d github.com/cockroachdb/cockroach/util/uuid
-cd $GOPATH/src/github.com/cockroachdb/cockroach/util/uuid
-git checkout e08b1242
-
-go get github.com/cockroachdb/examples-go/block_writer
-cp $GOPATH/bin/block_writer $BOSH_INSTALL_TARGET
+export GOPATH=${BOSH_COMPILE_TARGET}
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+cd $GOPATH/src/github.com/cockroachdb/examples-go/block_writer/
+go build
+cp block_writer $BOSH_INSTALL_TARGET

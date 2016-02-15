@@ -3,5 +3,4 @@ name: cockroach
 files:
 - cockroach/**/*
 dependencies:
-- git
 - golang1.5
