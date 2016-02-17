@@ -34,15 +34,9 @@
 [submodule "src/cockroach/github.com/codahale/hdrhistogram"]
 	path = src/cockroach/github.com/codahale/hdrhistogram
 	url = https://github.com/codahale/hdrhistogram
-[submodule "src/cockroach/github.com/codegangsta/cli"]
-	path = src/cockroach/github.com/codegangsta/cli
-	url = https://github.com/codegangsta/cli
 [submodule "src/cockroach/github.com/coreos/etcd"]
 	path = src/cockroach/github.com/coreos/etcd
 	url = https://github.com/coreos/etcd
-[submodule "src/cockroach/github.com/coreos/go-systemd"]
-	path = src/cockroach/github.com/coreos/go-systemd
-	url = https://github.com/coreos/go-systemd
 [submodule "src/cockroach/github.com/cpuguy83/go-md2man"]
 	path = src/cockroach/github.com/cpuguy83/go-md2man
 	url = https://github.com/cpuguy83/go-md2man
@@ -67,9 +61,6 @@
 [submodule "src/cockroach/github.com/go-sql-driver/mysql"]
 	path = src/cockroach/github.com/go-sql-driver/mysql
 	url = https://github.com/go-sql-driver/mysql
-[submodule "src/cockroach/github.com/godbus/dbus"]
-	path = src/cockroach/github.com/godbus/dbus
-	url = https://github.com/godbus/dbus
 [submodule "src/cockroach/github.com/gogo/protobuf"]
 	path = src/cockroach/github.com/gogo/protobuf
 	url = https://github.com/gogo/protobuf
@@ -127,9 +118,6 @@
 [submodule "src/cockroach/github.com/opencontainers/runc"]
 	path = src/cockroach/github.com/opencontainers/runc
 	url = https://github.com/opencontainers/runc
-[submodule "src/cockroach/github.com/opencontainers/specs"]
-	path = src/cockroach/github.com/opencontainers/specs
-	url = https://github.com/opencontainers/specs
 [submodule "src/cockroach/github.com/opennota/check"]
 	path = src/cockroach/github.com/opennota/check
 	url = https://github.com/opennota/check
@@ -160,18 +148,12 @@
 [submodule "src/cockroach/github.com/spf13/pflag"]
 	path = src/cockroach/github.com/spf13/pflag
 	url = https://github.com/spf13/pflag
-[submodule "src/cockroach/github.com/syndtr/gocapability"]
-	path = src/cockroach/github.com/syndtr/gocapability
-	url = https://github.com/syndtr/gocapability
 [submodule "src/cockroach/github.com/tebeka/go2xunit"]
 	path = src/cockroach/github.com/tebeka/go2xunit
 	url = https://github.com/tebeka/go2xunit
 [submodule "src/cockroach/github.com/termie/go-shutil"]
 	path = src/cockroach/github.com/termie/go-shutil
 	url = https://github.com/termie/go-shutil
-[submodule "src/cockroach/github.com/vishvananda/netlink"]
-	path = src/cockroach/github.com/vishvananda/netlink
-	url = https://github.com/vishvananda/netlink
 [submodule "src/cockroach/github.com/VividCortex/ewma"]
 	path = src/cockroach/github.com/VividCortex/ewma
 	url = https://github.com/VividCortex/ewma
