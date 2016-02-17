@@ -5,14 +5,14 @@ releases:
   version: latest
 compilation:
   cloud_properties:
-    instance_type: m3.medium
+    instance_type: c4.large
     availability_zone: 'us-east-1a'
   network: private
   reuse_compilation_vms: true
   workers: 4
 jobs:
 - name: db
-  instances: 3
+  instances: 5
   networks:
   - name: private
     default: [dns, gateway]
@@ -38,10 +38,10 @@ resource_pools:
 - name: default
   network: private
   stemcell:
-    name: bosh-aws-xen-ubuntu-trusty-go_agent
+    name: bosh-aws-xen-hvm-ubuntu-trusty-go_agent
     version: latest
   cloud_properties:
-    instance_type: m3.medium
+    instance_type: t2.small
     availability_zone: 'us-east-1a'
 networks:
 - name: private
