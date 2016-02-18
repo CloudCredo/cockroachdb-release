@@ -3,6 +3,10 @@ name: cockroachdb
 releases:
 - name: cockroachdb
   version: latest
+- name: turbulence
+  version: latest
+- name: bosh-aws-cpi
+  version: latest
 compilation:
   cloud_properties:
     instance_type: c4.large
@@ -20,8 +24,22 @@ jobs:
   resource_pool: default
   templates:
   - name: cockroachdb
+    release: cockroachdb
     links:
       db: db.cockroachdb.db
+  - name: turbulence_agent
+    release: turbulence
+- name: turbulence_api
+  templates:
+  - name: turbulence_api
+    release: turbulence
+  - name: aws_cpi
+    release: bosh-aws-cpi
+  instances: 1
+  resource_pool: default
+  networks:
+  - name: private
+    static_ips: [10.0.1.100]
 - name: block_writer
   lifecycle: errand
   instances: 1
@@ -31,9 +49,112 @@ jobs:
   resource_pool: default
   templates:
   - name: block_writer
+    release: cockroachdb
     links:
       db: db.cockroachdb.db
-
+properties:
+  turbulence_api:
+    cpi_job_name: aws_cpi
+    password: turbulence-password
+    certificate: |
+      -----BEGIN CERTIFICATE-----
+      MIICwTCCAiqgAwIBAgIBBDANBgkqhkiG9w0BAQsFADBXMQswCQYDVQQGEwJBVTET
+      MBEGA1UECAwKU29tZS1TdGF0ZTEhMB8GA1UECgwYSW50ZXJuZXQgV2lkZ2l0cyBQ
+      dHkgTHRkMRAwDgYDVQQDDAdST09UIENBMB4XDTE2MDIxNjA2NTczMloXDTE3MDIx
+      NTA2NTczMlowZjELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUxITAf
+      BgNVBAoMGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDEfMB0GA1UEAwwWdHVyYnVs
+      ZW5jZS5leGFtcGxlLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAx0hR
+      FyQQ/3QT7j/T/GbYRK4HSKVZ6xCL6xiM2/8Wqe4FW7POPsZs/quVyFIExWNJ1MDJ
+      HlU/UyZloTiAvcEqcWxm/gi7fZUd7Z3AjFrlZnSrxy3ogj3hZuyxgTEjlV5sc4Mb
+      EalbVnZt11J+hrwyhXD7y/6k8ab1VSOavsyX3T0CAwEAAaOBjTCBijAJBgNVHRME
+      AjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0
+      ZTAdBgNVHQ4EFgQUduxZ2y0kN+slOlP8xJXDUD1aPRUwHwYDVR0jBBgwFoAUM5+i
+      MCreJxX5HnJWTy99wosEMaAwDwYDVR0RBAgwBocECgABZDANBgkqhkiG9w0BAQsF
+      AAOBgQBXUZoj2yBsqyY/GYB7HZGXvh22lbgleWpGXdlmfs8/SMPCxy9oxK8DoHbo
+      WT7uaHZB1FDE94/vjpD9A9bWQjPHRD7uiBMFJaHL36jQb5EtHMy1palznUsPomQ1
+      aeYYO4lw6Y8ppk3MqB5Vk71USuNH9fLNx3zoLOvuytwJXwXB4w==
+      -----END CERTIFICATE-----
+    private_key: |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIICXgIBAAKBgQDHSFEXJBD/dBPuP9P8ZthErgdIpVnrEIvrGIzb/xap7gVbs84+
+      xmz+q5XIUgTFY0nUwMkeVT9TJmWhOIC9wSpxbGb+CLt9lR3tncCMWuVmdKvHLeiC
+      PeFm7LGBMSOVXmxzgxsRqVtWdm3XUn6GvDKFcPvL/qTxpvVVI5q+zJfdPQIDAQAB
+      AoGBAMacSFUr2NT/ty1n57pSNZCdcRzxzt/7qbcwzJIldUz+r9BpL1BZKh/Wmnz/
+      YUnoXpjvWoIkq+wPBJLdYVG8xrJpHZfLaNtvq4CsliTwU5eeU0dUxZ4eSX/+vM00
+      5XwO4RxwvKkmcKAlsSyt07QLCQhoVniI3AiI8J0Z8obUo3VxAkEA8JWBqf4jftnZ
+      CYP+HX++15TnOjTeJPeevM+IJhqWhnaIOicTHq+6aCExnqvb6Ci7mLZDePv85+Di
+      wjZNhhOcQwJBANQNTt6inEKbPyS56HBw/WjnIUPHgkfylXgPM/f57PA1lq5mErDi
+      rMpc8VXRf/R0kisNy8AanQa43aMBMzYDyH8CQCtfWLPz3CRXU9hyUlKxIA+viYwl
+      0dKqTZTOeUYdTvvIzMBnIPxMQ/fX3CE17HxLM57RZRKfozWOhnLq5UkBqg8CQQC6
+      bDi6YhseM33/u7EtqSgf4ZLNE8jll87wDe2SRJaZV4NxLyufdqiR/8PrvpLPRux6
+      DVbjPIJwNnYjqBptkkXhAkEAySnaVFiwjgWuyGN582Zgq82ksiE+GEpc7mjzj6c0
+      EjWvl5e7bkoloVICyYpSgHwbQ4h6Hc2tY3nFLn5KR5xPBA==
+      -----END RSA PRIVATE KEY-----
+    director:
+      host: 10.0.0.6
+      username: admin
+      password: admin
+      ca_cert: |
+        -----BEGIN CERTIFICATE-----
+        MIICfDCCAeWgAwIBAgIJANxGkwHRfk1cMA0GCSqGSIb3DQEBCwUAMFcxCzAJBgNV
+        BAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBX
+        aWRnaXRzIFB0eSBMdGQxEDAOBgNVBAMMB1JPT1QgQ0EwHhcNMTYwMjE2MDM0MjQz
+        WhcNMjYwMjEzMDM0MjQzWjBXMQswCQYDVQQGEwJBVTETMBEGA1UECAwKU29tZS1T
+        dGF0ZTEhMB8GA1UECgwYSW50ZXJuZXQgV2lkZ2l0cyBQdHkgTHRkMRAwDgYDVQQD
+        DAdST09UIENBMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC5/5oXqFvFfo2U
+        Vd2wN28vSPBPmQW4gk8rcz/YVeCbpn76jn/SPvtVUxVQYRZCfHsYYJX+UyiCfnxI
+        jnh5vNeCFOrtHeG/S+wrOpygot/l5Bkm0D65F1E7pazDEMJd9LrYpDtXsrVL5tmf
+        RPlN+zbE63zQ90mHPPcBB+xyENYA5QIDAQABo1AwTjAdBgNVHQ4EFgQUM5+iMCre
+        JxX5HnJWTy99wosEMaAwHwYDVR0jBBgwFoAUM5+iMCreJxX5HnJWTy99wosEMaAw
+        DAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQsFAAOBgQBqutt2i6P+hfknrf1yNfmT
+        EbuRHIhAiVb2IHCEMRyhKpDbesjDCrnoAkQlCnMQ7qT1XkuIllBUdZSJ9wGV2RGP
+        rhEsLiLbVLiw0VsWPXIUVGIR0TuRYKnlaYH4Woilg+9NmAKbBrqkdRakh0I1jEWt
+        XaLvLEbOBnJRhboAT5LCOA==
+        -----END CERTIFICATE-----
+  turbulence_agent:
+    api:
+      host: 10.0.1.100
+      password: turbulence-password
+      ca_cert: |
+        -----BEGIN CERTIFICATE-----
+        MIICfDCCAeWgAwIBAgIJANxGkwHRfk1cMA0GCSqGSIb3DQEBCwUAMFcxCzAJBgNV
+        BAYTAkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBX
+        aWRnaXRzIFB0eSBMdGQxEDAOBgNVBAMMB1JPT1QgQ0EwHhcNMTYwMjE2MDM0MjQz
+        WhcNMjYwMjEzMDM0MjQzWjBXMQswCQYDVQQGEwJBVTETMBEGA1UECAwKU29tZS1T
+        dGF0ZTEhMB8GA1UECgwYSW50ZXJuZXQgV2lkZ2l0cyBQdHkgTHRkMRAwDgYDVQQD
+        DAdST09UIENBMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC5/5oXqFvFfo2U
+        Vd2wN28vSPBPmQW4gk8rcz/YVeCbpn76jn/SPvtVUxVQYRZCfHsYYJX+UyiCfnxI
+        jnh5vNeCFOrtHeG/S+wrOpygot/l5Bkm0D65F1E7pazDEMJd9LrYpDtXsrVL5tmf
+        RPlN+zbE63zQ90mHPPcBB+xyENYA5QIDAQABo1AwTjAdBgNVHQ4EFgQUM5+iMCre
+        JxX5HnJWTy99wosEMaAwHwYDVR0jBBgwFoAUM5+iMCreJxX5HnJWTy99wosEMaAw
+        DAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQsFAAOBgQBqutt2i6P+hfknrf1yNfmT
+        EbuRHIhAiVb2IHCEMRyhKpDbesjDCrnoAkQlCnMQ7qT1XkuIllBUdZSJ9wGV2RGP
+        rhEsLiLbVLiw0VsWPXIUVGIR0TuRYKnlaYH4Woilg+9NmAKbBrqkdRakh0I1jEWt
+        XaLvLEbOBnJRhboAT5LCOA==
+        -----END CERTIFICATE-----
+  aws:
+    access_key_id: 'access-key-id'
+    secret_access_key: 'secret-access-key'
+    default_security_groups: [bosh]
+    region: us-east-1
+    default_key_name: [bosh]
+  registry:
+    host: 10.0.0.6
+    port: 25777
+    username: admin
+    password: admin
+  nats:
+    user: nats
+    password: nats-password
+    address: 10.0.0.6
+    port: 4222
+  blobstore:
+    address: 10.0.0.6
+    port: 25250
+    provider: dav
+    agent:
+      user: agent
+      password: agent-password
 resource_pools:
 - name: default
   network: private
@@ -50,6 +171,7 @@ networks:
   - range: 10.0.1.0/24
     gateway: 10.0.1.1
     reserved: 10.0.1.1 - 10.0.1.3
+    static: [10.0.1.100]
     dns: [10.0.0.2]
     security_groups:
     - default

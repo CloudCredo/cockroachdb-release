@@ -1,0 +1,19 @@
+{
+  "Tasks": [
+    {
+    "Type": "firewall",
+    "Timeout": "5m"
+    }
+  ],
+  "Deployments": [
+    {
+      "Name": "cockroachdb",
+      "Jobs": [
+        {
+          "Name": "db*",
+          "Limit": "50%"
+        }
+      ]
+    }
+  ]
+}
